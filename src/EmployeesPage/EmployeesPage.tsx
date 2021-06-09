@@ -11,7 +11,7 @@ function EmployeesPage({ className }: { className?: string }) {
 
   useEffect(() => {
     employeesService.fetchEmployees()
-      
+      .then(setEmployees);
   }, []);
 
   const handleStatusChange = (employee: any, status: string) => {
