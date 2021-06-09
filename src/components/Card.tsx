@@ -26,6 +26,8 @@ interface StyledCardInfoProps {
 
 const StyledCardInfo = styled.div<StyledCardInfoProps>`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   box-sizing: border-box;
   padding: 10px 15px;
   align-items: center;
@@ -34,6 +36,10 @@ const StyledCardInfo = styled.div<StyledCardInfoProps>`
   text-align: start;
   .image {
     margin-right: 25px;
+    flex-basis: 100px;
+  }
+  .info {
+    flex: 300px 1 1;
   }
   .title {
     font-size: 26px;
@@ -75,7 +81,7 @@ export function CardInfo({ title = '', subtitle, value = '', image = '', ...rest
       <div className="image">
         {imageNode}
       </div>
-      <div>
+      <div className="info">
         <div className="title">{title}</div>
         <div className="subtitle">{subtitle}</div>
       </div>

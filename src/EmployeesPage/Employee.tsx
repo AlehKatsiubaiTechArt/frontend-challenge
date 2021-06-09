@@ -50,8 +50,8 @@ function Employee ({
         title={isLoading ? <RectSkeleton width="250px" height="30px" /> : name.first}
         subtitle={
           <div>
-            <div>{isLoading ? <RectSkeleton width="300px" height="22px" /> : `Email: ${email}`}</div>
-            <div>{isLoading ? <RectSkeleton width="200px" height="22px" /> : `Phone: ${phone}`}</div>
+            <div>{isLoading ? <RectSkeleton width="300px" height="22px" /> : <span><b>Email</b>: {email}</span>}</div>
+            <div>{isLoading ? <RectSkeleton width="200px" height="22px" /> : <span><b>Phone</b>: {phone}</span>}</div>
           </div>
         }
         image={isLoading ? <CircleSkeleton size="100px" /> : picture.large} />
@@ -66,5 +66,6 @@ function Employee ({
 
 export default styled(Employee)`
   margin: 10px;
-  max-width: 800px;
+  max-width: 700px;
+  width: 100%;
 `;

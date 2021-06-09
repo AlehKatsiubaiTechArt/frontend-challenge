@@ -38,7 +38,6 @@ export default styled(Breadcrumb)`
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
   li {
     color: gray;
     text-decoration: none; 
@@ -47,6 +46,8 @@ export default styled(Breadcrumb)`
     position: relative;
     display: block;
     white-space: nowrap;
+    cursor: pointer;
+    text-align: center;
     &:hover {
       color: white;
       background: #3b84f9;
@@ -82,8 +83,8 @@ export default styled(Breadcrumb)`
       display: block; 
       width: 0; 
       height: 0;
-        border-top: 25px solid transparent;
-        border-bottom: 25px solid transparent;
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent;
       border-left: 20px solid rgb(214, 214, 214);
       position: absolute;
       top: 50%;
@@ -99,9 +100,12 @@ export default styled(Breadcrumb)`
       margin-right: 25px;
     }
   }
-  @media (max-width: 800px) { 
+  @media (max-width: 700px) { 
     display: flex;
     flex-direction: column;
+    li {
+      padding-left: 10px !important;
+    }
     li:after {
       border: none
     }

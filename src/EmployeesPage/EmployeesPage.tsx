@@ -4,11 +4,14 @@ import { employeesService } from '../services/employeesService';
 import Employee from './Employee';
 
 function EmployeesPage({ className }: { className?: string }) {
-  const [employees, setEmployees] = useState<any[]>(new Array(5).fill({ isLoading: true }).map((i, index) => ({ ...i, id: index })));
+  const loadedEmployees = new Array(5)
+    .fill({ isLoading: true })
+    .map((i, index) => ({ ...i, id: index }));
+  const [employees, setEmployees] = useState<any[]>(loadedEmployees);
 
   useEffect(() => {
     employeesService.fetchEmployees()
-      .then(setEmployees);
+      
   }, []);
 
   const handleStatusChange = (employee: any, status: string) => {
@@ -33,4 +36,5 @@ export default styled(EmployeesPage)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
 `;

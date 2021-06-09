@@ -5,8 +5,8 @@ export const darkMintGreen = 'rgb(28, 189, 102)';
 export const blueGrey = 'rgb(141, 149, 157)';
 export const brownishGrey = 'rgb(110, 110, 110)';
 
-export const mainColor = darkPink;//'#d83275';
+export const mainColor = darkPink;
 export const backgroundColor = '#f7f8fb';
-export const greenColor = darkSeaGreen;// '#0e994d';
-export const greyColor = blueGrey;//'#aaa';
+export const greenColor = darkSeaGreen;
+export const greyColor = blueGrey;
 export const lightGreyColor = '#eaedf4';
