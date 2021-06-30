@@ -15,8 +15,11 @@ function EmployeesPage({ className }: { className?: string }) {
   }, []);
 
   const handleStatusChange = (employee: any, status: string) => {
-    const newEmployees = employees.map(e => e === employee ? { ...employee, status } : e);
-    setEmployees(newEmployees);
+    employeesService.changeEmployeeStatus(employee.id, status)
+      .then((newEmployee) => {
+        const newEmployees = employees.map(e => e.id === newEmployee.id ? newEmployee : e);
+        setEmployees(newEmployees);
+      });
   };
   
   return (
