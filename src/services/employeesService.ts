@@ -4,13 +4,8 @@ import { emulateServerResponse, generateInt } from "../utils";
 
 export class EmployeesService {
   async fetchEmployees() {
-    const response = await axios.get("https://randomuser.me/api/?results=10");
-    const employees = response.data.results
-      .map((employee: any, i: number) => ({
-        ...employee,
-        status: EMPLOYEE_STATUSES[generateInt(0, 4)],
-        id: i
-      }));
+    const response = await axios.get("/employees");
+    const employees = response.data.results;
     return emulateServerResponse(employees);
   }
 }
